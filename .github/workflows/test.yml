@@ -1,0 +1,65 @@
+name: Systems Administration Toolkit Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: [3.8, 3.9, '3.10', '3.11']
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run basic syntax check
+      run: |
+        python -m py_compile test.py
+        python -m py_compile tests/run_tests.py
+    
+    - name: Run test suite
+      run: |
+        python tests/run_tests.py
+    
+    - name: Run individual test files
+      run: |
+        python test.py
+        python test_simple.py
+        python test_toolkit.py
+        python test_validation.py
+        python test_working.py
+        python test_final.py
+      continue-on-error: true
+    
+    - name: Test PowerShell scripts (Windows only)
+      if: matrix.os == 'windows-latest'
+      run: |
+        powershell -File test_toolkit.ps1
+      continue-on-error: true
+    
+    - name: Validate project structure
+      run: |
+        python -c "
+        import os
+        required_dirs = ['linux', 'macos', 'windows', 'cross-platform', 'monitoring', 'tests', 'docs']
+        missing = [d for d in required_dirs if not os.path.exists(d)]
+        if missing:
+            print(f'Missing directories: {missing}')
+            exit(1)
+        print('All required directories present')
+        "
