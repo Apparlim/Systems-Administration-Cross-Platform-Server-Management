@@ -7,7 +7,7 @@
 
 Cross-platform server management toolkit for Linux, macOS, and Windows. Enterprise-ready automation reduces access issues by 30% with security hardening, central user management, and auto monitoring.
 
-## 🚀 Key Features
+## Key Features
 
 - **Multi-OS Support** - Works seamlessly across Linux, macOS, and Windows
 - **30% Fewer Access Issues** - Centralized user management and permissions
@@ -15,7 +15,7 @@ Cross-platform server management toolkit for Linux, macOS, and Windows. Enterpri
 - **Automated Monitoring** - Real-time alerts and system health checks
 - **Quick Deployment** - Ready-to-use scripts for instant setup
 
-## 📋 Quick Start
+##  Quick Start
 
 ### Linux
 ```bash
@@ -37,7 +37,7 @@ sudo ./macos/scripts/system-config.sh
 python tests/run_tests.py
 ```
 
-## 🛠️ Installation
+##  Installation
 
 ```bash
 git clone https://github.com/Apparlim/Systems-Administration-Cross-Platform-Server-Management.git
@@ -46,7 +46,7 @@ pip install -r requirements.txt
 python tests/run_tests.py
 ```
 
-## 📁 What's Inside
+##  What's Inside
 
 ```
 ├── linux/          # Linux server automation
@@ -58,7 +58,7 @@ python tests/run_tests.py
 └── docs/           # Full documentation
 ```
 
-## 💡 Usage Example
+##  Usage Example
 
 ```python
 from cross_platform.python.user_manager import UserManager
@@ -72,7 +72,7 @@ user_manager.create_user(
 )
 ```
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 python tests/run_tests.py           # All tests
@@ -81,36 +81,19 @@ python tests/run_tests.py           # All tests
 powershell -File tests/validate_windows.ps1  # Windows only
 ```
 
-## 📊 Results
+##  Results
 
 - **30% reduction** in access issues
 - **40% less** manual intervention
 - **100% compliance** with security standards
 - Enterprise-ready for production
 
-## 🤝 Contributing
-
-1. Fork the repo
-2. Create your branch (`git checkout -b feature/awesome-feature`)
-3. Commit changes (`git commit -m 'Add feature'`)
-4. Push to branch (`git push origin feature/awesome-feature`)
-5. Open a Pull Request
-
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file
 
-## 👨‍💻 Author
-
-**Apparlim** - Systems Engineer  
-GitHub: [@Apparlim](https://github.com/Apparlim)
-
-## 🆘 Support
-
-- **Docs**: [docs/](docs/) directory
-- **Issues**: [GitHub Issues](https://github.com/Apparlim/Systems-Administration-Cross-Platform-Server-Management/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/Apparlim/Systems-Administration-Cross-Platform-Server-Management/discussions)
 
 ---
 
 **Built for enterprise environments with security, compliance, and automation in mind.**
+
